@@ -1,7 +1,15 @@
 import { useState } from 'react'
 import './App.css'
+
 function App() {
-  const [counter, setCounter] = useState(0);
+  let [counter, setCounter] = useState(0);
+  if (counter < 0) {
+    return setCounter(counter = 0);
+  }
+
+  if (counter > 20) {
+    return setCounter(counter = 20);
+  }
   return (
     <>
       <h1>Counter App</h1>
